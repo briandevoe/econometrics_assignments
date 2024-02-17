@@ -1,0 +1,17 @@
+---
+title: "Advanced Econometrics 2 Assignment 1 Problem 4"
+author: "Brian DeVoe"
+output: pdf_document
+date: "2024-02-13"
+---
+
+
+# Problem 4a
+
+$Y_t = X_t - u_t = \phi_1(X_{t-1}-u_{t-1}) + \phi_2(X_{t-2} - u_{t-2}) + ... + \phi_p(X_{t-p}-u_{t-p}) + \epsilon_t$
+
+$\rightarrow X_t = \Sigma_{i=1}^{p}\phi_iX_{t-i} + \Sigma_{i=1}^p\phi_iu_{t-i} + \epsilon_t + u_t$
+
+The first sum is AR(p) and the second sum is MA(p), so we have an ARMA(p,p) process.
+
+# Problem 4b

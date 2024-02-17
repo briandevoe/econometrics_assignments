@@ -1,0 +1,81 @@
+---
+title: "Advanced Econometrics 2 Assignment 1 Problem 1"
+author: "Brian DeVoe"
+output: pdf_document
+date: "2024-02-13"
+---
+
+
+# Problem 1a
+
+Show that $Y_t=\phi_1Y_{t-1}+\phi_2Y_{t-2}+\epsilon_t$ can be rewritten as $Y_t = \Sigma_{j=0}^{\infty}(\Sigma_{j}^{i=0}\lambda_{1}^{j-i}\lambda_{2}^{i})e_{t-j}$
+
+Since the roots of $(1-\phi_1z-\phi_2z^2)=0$ lie outside the unit circle we know that the process is stable and also that $\lambda_{1,2} < |1|$, which will allow us to invert the lag polynomial and also allow us to take advantage of the geometrics series.
+
+$Y_t = (1-\lambda_1L)^{-1}(1-\lambda_2L)^{-1}\epsilon_t = (1+\lambda_1L+\lambda_1^2L^2+...)(1+\lambda_2L+\lambda_2^2L^2+...)\epsilon_t$
+
+after expanding and collecting like terms we have...
+
+$=[1 + (\lambda_1 + \lambda_2)L + (\lambda_1^2 + \lambda_2^2)L^2 + (\lambda_1^3 + \lambda_1^2\lambda_1 + \lambda_1\lambda_2^2 + \lambda_2^3)L^3 + ...]\epsilon_t$
+
+&nbsp;
+
+$= \Sigma_{j=0}^{\infty}(\Sigma_{i=0}^{j}\lambda_{1}^{j-i}\lambda_{2}^{j})L^{j}\epsilon_t = \Sigma_{j=0}^{\infty}(\Sigma_{i=0}^{j}\lambda_{1}^{j-i}\lambda_{2}^{j})\epsilon_{t-j}$
+
+&nbsp;
+&nbsp;
+
+# Problem 1b
+
+$j=0$
+
+then we have $\lambda_1^0\lambda_2^0 = 1$ and by definition $c_1+c_2=1$
+
+&nbsp;
+
+$j=1$
+
+then we have $c_1\lambda_1 + c_1\lambda_2 = (\frac{\lambda1}{\lambda_1-\lambda_2})\lambda_1 + (\frac{\lambda_2}{\lambda_2 - \lambda_2})\lambda_2 = \frac{\lambda_1^2(\lambda_2 - \lambda_1) + \lambda_2^2(\lambda_1 - \lambda_2)}{(\lambda_1 - \lambda_2)(\lambda_2 - \lambda_1)}$
+
+$=\frac{(\lambda_1 + \lambda_2)(2\lambda_1\lambda_2 - \lambda_1^2 - \lambda_2^2)}{2\lambda_1\lambda_2 -\lambda_1^2 - \lambda_2^2} = \lambda_1 + \lambda_2$
+
+$=\Sigma_{i=0}^{1}\lambda_1^{1-i}\lambda_2^i$
+
+&nbsp;
+
+$j=2$
+
+$c_1\lambda_1^2 + c_2\lambda_2^2 = (\frac{\lambda_1}{\lambda_1 - \lambda_2})\lambda_1^2 + (\frac{\lambda_2}{\lambda_2-\lambda_1})\lambda_2^2 = \frac{\lambda_1^3(\lambda_2-\lambda_1) + \lambda_2^3(\lambda_1 - \lambda_2)}{(\lambda_1-\lambda_2)(\lambda_2-\lambda_1)}$
+
+$=\frac{\lambda_1^3\lambda_2 + \lambda_1\lambda_2^3-\lambda_1^4-\lambda_2^4}{2\lambda_1\lambda_2 - \lambda_1^2 - \lambda_2^2} =\frac{(\lambda_1^2 + \lambda_2^2 + \lambda_1\lambda_2)(2\lambda_1\lambda_2 - \lambda_1^2 - \lambda_2^2)}{2\lambda_1\lambda_2 - \lambda_1^2 - \lambda_2^2} = \lambda_1^2 + \lambda_2^2 + \lambda_1\lambda_2$
+
+$=\Sigma_{i=0}^2\lambda_1^{2-i}\lambda_2^i$
+
+
+&nbsp;
+&nbsp;
+
+# Problem 1c
+
+$\lambda_1 + \lambda_2 = \phi_1$
+
+$\lambda_1\lambda_2 = -\phi_2$
+
+&nbsp;
+
+$\phi_1^2 + \phi_2 = (\lambda_1 + \lambda_2)^2 - \lambda_1\lambda_2 = \lambda_1^2 + \lambda_2^2 + 2\lambda_1\lambda_2 - \lambda_1\lambda_2$
+
+$=\lambda_1^2 + \lambda_2^2 + \lambda_1\lambda_2 = c_1\lambda_1^2 + c_2\lambda_2^2$
+
+which is the same as the expression for $j=2$ in part b
+
+
+
+
+
+
+
+
+
+
+

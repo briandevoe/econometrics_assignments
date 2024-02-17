@@ -1,0 +1,50 @@
+---
+title: "Advanced Econometrics 2 Assignment 1 Problem 2"
+author: "Brian DeVoe"
+output: pdf_document
+date: "2024-02-13"
+---
+
+
+# Problem 2a
+
+$Y_t -  Y_{t-1} = (1 - \theta L)\epsilon_t$
+
+&nbsp;
+
+since $|\theta| < 1$ we can invert $(1-\theta L)$ and expand using a geometric series
+
+$\rightarrow (Y_t - Y_{t-1})(1-\theta L)^{-1} = \epsilon_t$
+
+$\rightarrow (Y_t - Y_{t-1})(1+\theta L + \theta^2L^2 + \theta^3L^3 + ...)= \epsilon_t$
+
+$\rightarrow (Y_t + \theta LY_t + \theta^2L^2Y_t + ...) - (Y_{t-1} + \theta LY_{t-1} + \theta^2L^2Y_{t-1} + ...) = \epsilon_t$
+
+$\rightarrow Y_t + [Y_{t-1}(\theta-1) + Y_{t-2}(\theta^2 - \theta) + ... ] = \epsilon_t$
+
+subtract the series from both sides and on the right hand side distribute the $-1$ to flip the theta terms
+
+$\rightarrow Y_t = [Y_{t-1}(1-\theta) + Y_{t-2}(\theta-\theta^2) + ... ] + \epsilon_t$
+
+$\rightarrow Y_t = \Sigma_{i=1}^{\infty}(\theta^{i-1} - \theta^i)Y_{t-1} + \epsilon_t$
+
+let $\pi_i = \theta^{i-1} - \theta^i$, then we have the desired analytical expression. 
+
+
+&nbsp;
+
+# Problem 2b
+
+$\Sigma_{i=1}^{\infty}\pi_i = \Sigma_{i=1}^{\infty}(\theta^{i-1 - \theta^i}) = (\theta^{1-1} - \theta^1) + (\theta^{2-1} - \theta^2) + (\theta^{3-1} - \theta^3) + ...$
+
+This is a telescoping series where the first term is equal to 1 and the last term approaches $\theta^{\infty}$. Since $|\theta| < 1$ we know that the series converges and the sum is equal to 1.
+
+$lim_{k\rightarrow \infty}(1-\theta^k) = 1$
+
+
+
+# Problem 2c
+
+Since $|\theta| <1$, $\pi_i = \theta^{i-1} - \theta^i$ and $\Sigma_{i=1}^{\infty}\pi_i = 1$, we know that all the $\pi$s are less than 1 in absolute value. So $Y_t$ is covariance stationary. Or, in other words, the coefficients are absolutely summable. I don't believe $Y_t-Y_{t-1}$ is covariance stationary since the coefficient in front of $y_{t-1}$, which is -1, is not absolutely summable. 
+
+
